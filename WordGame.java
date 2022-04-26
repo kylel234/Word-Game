@@ -24,11 +24,10 @@ public class WordGame implements ActionListener {
     wordPanels = new WordPanel[6]; // 6 tries
     count = 0;
     frame = new JFrame("Word Game");
-    frame.setSize(300, 300);
-    frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+    frame.setSize(400, 400); // sets size of the gui window
     frame.setLayout(new GridLayout(7, 1));
     frame.setVisible(true);
-    frame.setLocationRelativeTo(null);
+    frame.setLocationRelativeTo(null); // opens game to the center of screen
     userPanel = new UserPanel();
 
     for (int i = 0; i < wordPanels.length; i++) {
@@ -138,67 +137,4 @@ public class WordGame implements ActionListener {
   public WordPanel getActivePanel() {
     return this.wordPanels[count];
   }
-  
-  /*public void wordGame() {
-
-    Scanner input = new Scanner(System.in);
-    String wordChosen = randomizeWord();
-    char[] word = new char[wordChosen.length()];
-
-    for (int i = 0; i < word.length; i++) {
-      word[i] = wordChosen.charAt(i);
-    }
-
-    System.out.println("Rules:\nThe word has 6 letters\nYou have 6 tries to guess it\n(Remember"
-        + " to use lowercase letters and proper words only)\nEnter a word to begin:");
-
-    for (int i = 0; i < 6; i++) {
-      //Taking input from the user.
-      String userInput = input.nextLine();
-      if (userInput.length() != 6) {
-        if (i == 5) {
-          System.out.println("USER LOST!\nCorrect answer = " + String.valueOf(word));
-          break;
-        }
-        System.out.println("Invalid input: try again");
-      }
-      else {
-        char[] userWord = new char[userInput.length()];
-        for(int j = 0; j < userInput.length(); j++){
-          userWord[j] = userInput.charAt(j);
-        }
-
-        //Comparing it to given word.
-        for (int k = 0; k < 6; k++) {
-          for (int l = 0; l < userInput.length(); l++) {
-
-            if (userWord[l] == word[k]) {
-
-              if (l == k) {
-                System.out.println(userWord[l] + " is at the right position.");
-                break;
-              }
-
-              System.out.println(userWord[l] + " is present in the word");
-              break;
-
-            }
-
-          }
-        }
-
-        //Final part
-        if (String.valueOf(userWord).equals(String.valueOf(word))) {
-          System.out.println("USER WON!\nAttempts: " + (i + 1));
-        }
-        else {
-          if (i == 6) {
-            System.out.println("USER LOST!\nCorrect answer = " + String.valueOf(word));
-            break;
-          }
-          System.out.println("Try again");
-        }
-      }
-    }
-  }*/
 }

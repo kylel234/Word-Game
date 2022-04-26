@@ -1,6 +1,9 @@
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * Creates panel user can interact with
+ */
 public class UserPanel extends JPanel {
   private JTextField userWord;
   private JButton enterButton;
